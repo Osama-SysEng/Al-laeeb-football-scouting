@@ -5,14 +5,14 @@ from app.main import app
 client = TestClient(app)
 
 def test_login():
-    response = client.post("/api/v1/auth/login", data={"username": "test@test.com", "password": "password123"})
+    response = client.post("/api/v1/auth/login", data={"username": "test@test.com", "password": "Password123!"})
     assert response.status_code == 200
     assert "access_token" in response.json()
 
 def test_register():
     response = client.post("/api/v1/auth/register", json={
         "email": "new@test.com",
-        "password": "password123",
+        "password": "Password123!",
         "first_name": "Test",
         "last_name": "User",
         "role": "player"
