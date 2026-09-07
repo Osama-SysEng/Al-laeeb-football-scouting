@@ -1,6 +1,14 @@
 # Al-La'eeb (اللعيب) - AI Football Talent Intelligence Platform
 
-> **Enterprise-grade, award-winning AI-powered football talent scouting platform** bridging the gap between raw athletic performance and elite professional standards.
+> **AI-powered football talent scouting platform** that turns match footage and player data into structured performance insights for coaches, academies, and scouting teams.
+
+[![CI](https://github.com/Osama-SysEng/Al-laeeb-football-scouting/actions/workflows/ci.yml/badge.svg)](https://github.com/Osama-SysEng/Al-laeeb-football-scouting/actions/workflows/ci.yml) [![Security](https://img.shields.io/badge/security-CodeQL%20%2B%20dependency%20scans-0b7285)](SECURITY.md)
+
+> **Project status:** active engineering prototype / MVP. Core service boundaries, domain models, CV pipeline interfaces, authentication service, Docker packaging, Kubernetes manifests, and CI/CD workflows are present. Production deployment requires validated model quality, real data governance, infrastructure credentials, and an operational acceptance test.
+
+## Why Al-La'eeb
+
+Clubs and academies need more than raw video: they need repeatable measurements, explainable reports, privacy controls, and a workflow that connects analysts, coaches, and players. Al-La'eeb is organized as modular services so a customer can start with one analysis workflow and scale toward a full scouting platform.
 
 ## 🏆 Platform Overview
 
@@ -44,11 +52,11 @@ Al-La'eeb is an end-to-end AI platform for football talent identification using:
 
 ```bash
 # 1. Clone and enter directory
-cd al-laeeb-platform
+cd Al-laeeb-football-scouting
 
 # 2. Copy environment variables
 cp .env.example .env
-# Edit .env with your API keys
+# Edit .env with development-only values; never commit real keys
 
 # 3. Start all services
 docker-compose up --build
@@ -132,7 +140,9 @@ al-laeeb-platform/
 - API rate limiting
 - Audit logging
 
-## 📊 Performance SLAs
+## 📊 Performance targets
+
+The following values are **engineering targets**, not independently validated production measurements. They must be confirmed with representative match footage, selected hardware, concurrency tests, and an agreed customer acceptance protocol.
 
 | Metric | Target |
 |--------|--------|
@@ -141,6 +151,10 @@ al-laeeb-platform/
 | Streaming latency | < 3 seconds |
 | Concurrent streams | 1,000+ |
 | CV processing FPS | 30 per stream |
+
+## ✅ Customer evaluation path
+
+For a customer demonstration, use synthetic or consented sample footage, show the health endpoints and analysis workflow, review an example report, and explain which components are prototypes versus deployment-ready candidates. Do not upload real biometric or athlete-identifying data until retention, consent, access control, and deletion procedures have been approved.
 
 ## 🚢 Deployment
 
